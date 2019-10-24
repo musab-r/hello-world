@@ -1,13 +1,16 @@
-var express = require('express');
+'use strict';
+
+const express = require('express');
 
 // Constants
-var PORT = 8080;
+const PORT = 8080;
+const HOST = '0.0.0.0';
 
 // App
-var app = express();
-app.get('/', function (req, res){
-  res.send('[Musab] Hello world from Distelli & Docker!');
+const app = express();
+app.get('/', (req, res) => {
+  res.send('[Musab] Hello world\n');
 });
 
-app.listen(PORT);
-console.log('Running on http://localhost:' + PORT);
+app.listen(PORT, HOST);
+console.log(`Running on http://${HOST}:${PORT}`);
